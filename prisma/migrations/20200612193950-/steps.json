@@ -1,0 +1,21 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteDirective",
+      "location": {
+        "path": {
+          "tag": "Model",
+          "model": "Email",
+          "arguments": [
+            {
+              "name": "",
+              "value": "[from]"
+            }
+          ]
+        },
+        "directive": "index"
+      }
+    }
+  ]
+}

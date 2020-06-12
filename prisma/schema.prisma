@@ -1,0 +1,25 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Email {
+  id          String       @id @default(cuid())
+  from        String
+  to          String
+  subject     String
+  html        String
+  attachments Attachment[]
+}
+
+model Attachment {
+  id      String @id @default(cuid())
+  name    String
+  url     String
+  Email   Email  @relation(fields: [emailId], references: [id])
+  emailId String
+}

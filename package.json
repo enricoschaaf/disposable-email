@@ -4,9 +4,18 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "postinstall": "prisma generate",
+    "generate": "prisma generate",
+    "studio": "prisma studio --experimental",
+    "migrate:save": "prisma migrate save --experimental",
+    "migrate:up": "prisma migrate up --experimental"
   },
   "dependencies": {
+    "@aws-sdk/client-s3-node": "0.1.0-preview.7",
+    "@prisma/client": "^2.0.0",
+    "formidable": "^2.0.0-canary.20200504.1",
+    "nanoid": "^3.1.9",
     "next": "^9.4.4",
     "preact": "^10.4.4",
     "preact-render-to-string": "^5.1.9",
@@ -17,6 +26,8 @@
   "devDependencies": {
     "@next/eslint-plugin-next": "^9.4.4",
     "@prefresh/next": "^0.3.0",
+    "@prisma/cli": "^2.0.0",
+    "@prisma/migrate": "^2.0.0",
     "@tailwindcss/ui": "^0.3.0",
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.36",
